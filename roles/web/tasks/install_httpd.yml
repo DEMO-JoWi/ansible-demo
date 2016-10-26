@@ -7,9 +7,6 @@
    - httpd
    - php
    - php-mysql
-  become: true
-  become_user: root
-  become_method: sudo
 
 - name: Install web role specific dependencies
   yum: name={{ item }} state=installed
