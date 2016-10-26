@@ -36,5 +36,7 @@
 
 - name: Create Application DB User
   mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present
+  
+- name: Remove any anonymous users in DB
   mysql_user: name='' host_all=yes state=absent
 
