@@ -7,6 +7,7 @@
    - mariadb-server
    - MySQL-python
   become: true
+  become_user: root
 
 - name: Configure SELinux to start mysql on any port
   seboolean: name=mysql_connect_any state=true persistent=yes
