@@ -17,8 +17,8 @@
   service: name=firewalld state=started enabled=yes
 
 - name: insert firewalld rule for httpd
-  firewalld: service=http permanent=true state=enabled
-
+#  firewalld: service=http permanent=true state=enabled
+  command: /usr/bin/firewall-cmd --zone=public --permanent --add-service=http
 
 - name: http service state
   service: name=httpd state=started enabled=yes
